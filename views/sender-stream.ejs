@@ -1,0 +1,11 @@
+<div class="senderStream" ng-controller="SenderStreamController as senderStream">
+	<p><%= username %>: <input type="email" ng-model="senderStream.name"/></p>
+	<video id="senderVideo" muted="muted" autoplay="true"></video>
+	<div id="streams" ng-click="senderStream.toggleCam()">
+		<a class="button cut-corner" href>{{ localStream.cameraIsOn ? 'Stop' : 'Start' }}</a>
+	</div>
+	<div ng-show="senderStream.cameraIsOn">		
+		<p><%= share %>:</p>
+		<a>{{ localStream.link }}</a>
+	</div>
+</div>

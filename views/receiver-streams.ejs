@@ -1,0 +1,24 @@
+<div class="receiverStreams" ng-controller="ReceiverStreamsController as receiverStreams">
+	
+
+	<div id="remoteVideosContainer"></div>
+
+	<table>
+    	<thead>
+    		<tr>
+        		<th>Stream Name</th><th>Action</th>
+   			</tr>
+   		</thead>
+    	<tbody>
+    		<tr ng-repeat="stream in receiverStreams.remoteStreams" ng-class="{'selected' : stream.isPlaying}">
+        		<td><a>{{stream.name}}</a></td>
+                <td ng-click="receiverStreams.view(stream)"><a>View</a></td>
+    		</tr>
+		</tbody>
+	</table>
+
+	<div id="streams" ng-click="receiverStreams.loadData()" style="width: 240px">
+        <a class="button cut-corner" href>Refresh</a>
+    </div>
+<div class="receiverStreams"></div>
+</div>

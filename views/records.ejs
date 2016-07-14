@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="jamstrands">
+  <head>
+    <title><%= title %></title>
+   
+    
+    <link rel='stylesheet' href='/stylesheets/style2.css' />
+	
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="javascripts/adapter.js"></script>
+	<script type="text/javascript" src="javascripts/rtcUser.js"></script>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js">
+	</script>
+	<script type="text/javascript" src="javascripts/app.js"></script>
+  </head>
+  <body>
+    <div id="site-content">
+			<header class="site-header">
+				<div class="container">
+					<a href="index.html" id="branding">
+						<small class="site-title"><%= header %></small>
+					</a> <!-- #branding -->
+					
+					<nav class="main-navigation">
+						<button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item"><a href="/index">Conference</a></li>
+							<li class="menu-item current-menu-item"><a href="/records">Records</a></li>
+							
+						</ul> <!-- .menu -->
+					</nav> <!-- .main-navigation -->
+					<div class="mobile-menu"></div>
+				</div>
+			</header> <!-- .site-header -->
+			
+			<div class="hero">
+				<div class="slider">
+					<div class="slides">
+						<div class="lazy-bg" style="background-image: url('dummy/slide-1.jpg');">
+							<div class="container">
+								<div class="col-md-7">
+									<div class="content">
+										<h2 class="entry-title">Records</h2>
+										<div>
+											<a href="" onclick="playVid('http://jamstrandsmediaservice16.streaming.mediaservices.windows.net/aede090f-09a6-42c0-a3cf-7ee058f235f1/41aeda76-3577-4086-b1f1-9eacec561281.ism/Manifest(format=mpd-time-csf)')">Channel 1</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 col-md-push-1">
+									<aside class="sidebar">
+										<div class="widget">
+											<h3 class="widget-title">Preview</h3>
+											<video id="records" autoplay preload="none" controls="true">
+								                <source src="" type="application/dash+xml"/>
+								            </video>
+										</div>
+									</aside>
+								</div>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+<script>
+	var vid = document.getElementById("records"); 
+	vid.style.visibility = "hidden";
+
+	function playVid(o) {
+		 vid.style.visibility = "visible";
+	      vid.setAttribute("src", o); 
+
+	    
+	} 
+	
+	function pauseVid() { 
+	    
+	}
+</script>			
+
+			<footer class="site-footer">
+				<div class="container">
+					<p class="copy"><%= footer %></p>
+				</div>
+			</footer> <!-- .site-footer -->
+
+		</div> <!-- #site-content -->
+
+  </body>
+</html>
